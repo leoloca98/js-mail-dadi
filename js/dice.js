@@ -21,3 +21,29 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto e stampare il ri
 10 - Stampare il risulato ottenuto e la conseguente scitta "You Win / You Lose / Draw"
 
 */
+// *Variabili per assegnare il valore al giocatore e al computer
+var userDice;
+var computerDice;
+
+// *Assegnare il valore casuale alle variabili citate a rigo 24
+userDice = Math.round(Math.random() * 6);
+computerDice = Math.round(Math.random() * 6);
+console.log("userDice: " + userDice);
+console.log("computer Dice: " + computerDice);
+// *Variabile che conterrà il risultato del controllo
+var result;
+
+// *Calcolo del vincitore
+result = userDice - computerDice;
+console.log(result);
+
+// *Assegnazione del vincitore in base a...
+if (result < 0) {
+    document.getElementById("loser").innerHTML = "You Lose";
+}
+if (result == 0) {
+    document.getElementById("draw").innerHTML = "Draw";
+}
+if (result > 0) {
+    document.getElementById("winner").innerHTML = "You Win";
+}
