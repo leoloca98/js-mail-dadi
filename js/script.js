@@ -25,11 +25,13 @@ var userMail;
 userMail = prompt("Inserisci la tua mail");
 
 //* Verifichiamo che la mail inserita sia presente nella whitelist
+var isAllowed;
 
 for (i = 0; i < whitelist.length; i++) {
     if (whitelist[i] == userMail) {
-        i = 20;
+        isAllowed = true;
     }
+    isAllowed = false;
     console.log(whitelist[i]);
 }
 
@@ -38,7 +40,7 @@ var correctMail;
 var wrongMail;
 
 
-if (i > whitelist.length) {
+if (isAllowed == true) {
     // Stampa "Benvenuto + mail"
     document.getElementById("correct").innerHTML = "Benvenuto " + userMail;
 
